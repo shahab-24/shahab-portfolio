@@ -13,15 +13,15 @@ const AboutMe = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Aspiring Full-Stack Developer
+          About Myself
         </motion.h1>
         <motion.h2
-          className="text-2xl lg:text-3xl text-yellow-300 font-semibold text-center mb-12"
+          className="text-2xl lg:text-2xl text-yellow-300 font-semibold text-center mb-12"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Passionate About Web Development & Security
+          Passionate About Web Development, Security & Helping Others
         </motion.h2>
 
         {/* About Me Content */}
@@ -53,6 +53,10 @@ const AboutMe = () => {
               <strong>CSS</strong>, <strong>Tailwind CSS</strong>, <strong>Node.js</strong>, and 
               <strong>MongoDB</strong>, aiming to create user-friendly, secure, and impactful applications.  
               I am also deeply interested in ethical hacking and integrating cybersecurity best practices into my work.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Beyond technology, I am passionate about <span className="text-yellow-400 font-medium">traveling, helping others, and exploring new places</span>. 
+              I find joy in assisting people in need, fostering connections, and experiencing the beauty of diverse cultures and landscapes.
             </p>
             <p className="text-lg leading-relaxed">
               I am excited to bring my knowledge and creativity to a forward-thinking 
@@ -94,20 +98,18 @@ const AboutMe = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <a
-            href="#"
-            className="btn btn-primary btn-lg rounded-full shadow-lg px-8 py-3 transition-transform transform hover:scale-105"
+            href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer"
+            className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
           >
             Hire Me
           </a>
           <Link to="/project">
-          <a
-            href="#"
-            className="btn btn-outline btn-lg rounded-full shadow-lg px-8 py-3 transition-transform transform hover:scale-105"
-          >
-            View Projects
-          </a>
+            <a
+              className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
+            >
+              View Projects
+            </a>
           </Link>
-         
         </motion.div>
       </div>
     </section>

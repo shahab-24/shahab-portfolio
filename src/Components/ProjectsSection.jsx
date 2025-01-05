@@ -6,7 +6,7 @@ const ProjectsSection = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('/projects.json') // Fetch project data
+    fetch('projects.json') // Fetch project data
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);

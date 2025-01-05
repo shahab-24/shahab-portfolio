@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 
 const EducationSection = () => {
@@ -17,7 +17,7 @@ const EducationSection = () => {
     },
     {
       title: "HSC in Business Studies",
-      institution: "Govt. City College, Chattogram | Passed",
+      institution: "Govt. City College, Chattogram | GPA : 4.00",
       description:
         "Studied core business principles, economics, accounting, and management, gaining valuable analytical skills.",
     },

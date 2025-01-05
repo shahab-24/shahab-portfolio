@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 const ProjectDetails = () => {
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
-    fetch('/projects.json')
+    fetch('projects.json')
       .then((res) => res.json())
       .then((data) => {
         const selectedProject = data.find((p) => p.id === projectId);
@@ -48,17 +49,70 @@ const ProjectDetails = () => {
           <li key={index}>{feature}</li>
         ))}
       </motion.ul>
-      <motion.a
-        href={project.liveLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        Visit Live Site
-      </motion.a>
+      <div className="flex gap-4">
+        <motion.a
+          href={project.liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          Visit Live Site
+        </motion.a>
+        <motion.a
+          href={`https://github.com/your-github-repo/${projectId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-full"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          GitHub Repo
+        </motion.a>
+        <motion.button
+          onClick={() => setShowMore(!showMore)}
+          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          {showMore ? "Show Less" : "Know More"}
+        </motion.button>
+      </div>
+      {showMore && (
+        <motion.div
+          className="mt-6 bg-gray-800 p-4 rounded-lg w-full max-w-3xl"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl font-semibold mb-4">Additional Details</h2>
+          <p className="mb-2">
+            <strong>Technologies:</strong> {project.technologies.join(", ")}
+          </p>
+          {project.backendTechnologies && (
+            <p className="mb-2">
+              <strong>Backend Technologies:</strong>{" "}
+              {project.backendTechnologies.join(", ")}
+            </p>
+          )}
+          <p className="mb-2">
+            <strong>Challenges:</strong> {project.challenges}
+          </p>
+          <p className="mb-2">
+            <strong>Improvements:</strong> {project.improvements}
+          </p>
+          <p className="mb-2">
+            <strong>Lackings:</strong> {project.lackings}
+          </p>
+          <p className="mb-2">
+            <strong>Learning Outcomes:</strong> {project.learningOutcomes}
+          </p>
+        </motion.div>
+      )}
     </motion.div>
   );
 };

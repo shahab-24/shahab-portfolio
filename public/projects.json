@@ -31,7 +31,11 @@
         "sweetalert2",
         "swiper",
         "yet-another-react-lightbox"
-      ]
+      ],
+      "challenges": "Implementing infinite scrolling with smooth animations was a significant challenge due to performance optimization concerns.",
+      "improvements": "UI design needs to be more visually appealing with better typography and color consistency. I will focus on enhancing accessibility features.",
+      "lackings": "Limited testing for edge cases and no offline functionality for users with poor internet connectivity.",
+      "learningOutcomes": "Gained in-depth knowledge of React Router DOM for navigation, Firebase for secure authentication, and Tailwind CSS for responsive design."
     },
     {
       "id": "2",
@@ -70,7 +74,11 @@
       "deployment": {
         "frontend": "Firebase Hosting",
         "backend": "Vercel"
-      }
+      },
+      "challenges": "Designing and implementing the search and filtering functionality required advanced knowledge of React state management.",
+      "improvements": "Add more features like user profiles and personalized recommendations to improve user engagement.",
+      "lackings": "Backend scalability is limited for a large database of movies due to minimal indexing.",
+      "learningOutcomes": "Learned to integrate front-end components with MongoDB and Firebase, improved skills in creating responsive carousels, and built a better understanding of animations with AOS."
     },
     {
       "id": "3",
@@ -106,7 +114,11 @@
       "deployment": {
         "frontend": "Firebase Hosting",
         "backend": "Vercel"
-      }
+      },
+      "challenges": "Handling real-time updates for food availability statuses without data inconsistency was challenging.",
+      "improvements": "UI needs enhancements to make navigation more intuitive. Add a map-based food location finder to improve user experience.",
+      "lackings": "The gamification system is basic and lacks advanced analytics or tracking mechanisms.",
+      "learningOutcomes": "Strengthened knowledge of CRUD operations and Firebase Authentication. Learned how to implement gamification mechanics for user engagement."
     }
   ]
   

@@ -6,7 +6,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.A{
-    color: cyan;
-}
+@keyframes floatPulse {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(34, 211, 238, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+    }
+  }
+  
+  .animate-float-pulse {
+    animation: floatPulse 3s ease-in-out infinite, pulse 2s infinite;
+  }
+  

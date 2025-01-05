@@ -1,4 +1,5 @@
 import React from "react";
+// Fixed import statement
 import { motion } from "framer-motion";
 
 const experiences = [
