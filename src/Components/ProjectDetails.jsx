@@ -5,18 +5,36 @@ import { useEffect, useState } from "react";
 const ProjectDetails = () => {
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
-    fetch('projects.json')
+    setLoading(true);
+    fetch('/projects.json')
       .then((res) => res.json())
       .then((data) => {
         const selectedProject = data.find((p) => p.id === projectId);
         setProject(selectedProject);
+        setLoading(false);
       });
   }, [projectId]);
 
-  if (!project) return <p>Loading...</p>;
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-12 px-6">
+        {/* Skeleton Loader for Project Details */}
+        <div className="animate-pulse w-full max-w-3xl">
+          <div className="h-12 bg-gray-700 rounded mb-4"></div>
+          <div className="h-64 bg-gray-600 rounded mb-6"></div>
+          <div className="h-6 bg-gray-700 rounded mb-4"></div>
+          <div className="h-4 bg-gray-700 rounded mb-4"></div>
+          <div className="h-4 bg-gray-700 rounded mb-4"></div>
+          <div className="h-6 bg-gray-700 rounded mb-4"></div>
+          <div className="w-24 h-10 bg-blue-500 rounded-full animate-pulse mb-4"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -62,7 +80,7 @@ const ProjectDetails = () => {
           Visit Live Site
         </motion.a>
         <motion.a
-          href={`https://github.com/your-github-repo/${projectId}`}
+           href={project.githubLink}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-full"

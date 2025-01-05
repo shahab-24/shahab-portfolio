@@ -5,6 +5,7 @@
       "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
       "description": "A web application showcasing eco-friendly travel adventures.",
       "liveLink": "https://diving-story.web.app/",
+      "githubLink": "https://github.com/programming-hero-web-course1/b10-a9-authentication-shahab-24",
       "features": [
         "Dynamic, visually appealing adventure gallery",
         "Authentication with Firebase",
@@ -43,6 +44,7 @@
       "image": "https://images.unsplash.com/photo-1527181152855-fc03fc7949c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
       "description": "A dynamic movie portal to explore, rate, and review movies.",
       "liveLink": "https://explore-world-movies.web.app/",
+      "githubLink": "https://github.com/programming-hero-web-course2/b10-a10-client-side-shahab-24",
       "features": [
         "Interactive movie portal with detailed information including ratings, genres, and release years",
         "User authentication using Firebase",
@@ -86,6 +88,7 @@
       "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
       "description": "A platform to share surplus food, reduce waste, and foster community engagement.",
       "liveLink": "https://al-madina-foods.web.app/",
+      "githubLink": "https://github.com/programming-hero-web-course2/b10a11-client-side-shahab-24",
       "features": [
         "Food CRUD operations: Add, edit, delete, and view food listings",
         "Dynamic food requests and availability status updates",

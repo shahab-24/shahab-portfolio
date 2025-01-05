@@ -4,14 +4,39 @@ import { Link } from "react-router-dom";
 
 const ProjectsSection = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('projects.json') // Fetch project data
+    fetch('/projects.json') // Fetch project data
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-gradient-to-r from-purple-800 via-blue-900 to-gray-900 text-white">
+        {/* Skeleton Loader */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 lg:px-20">
+          {[...Array(6)].map((_, index) => (
+            <div key={index} className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+              <div className="h-48 bg-gray-600"></div>
+              <div className="p-6">
+                <div className="h-6 bg-gray-700 rounded mb-4"></div>
+                <div className="h-4 bg-gray-700 rounded mb-4"></div>
+                <div className="mt-4 flex justify-between items-center">
+                  <div className="w-24 h-10 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="w-24 h-10 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section>

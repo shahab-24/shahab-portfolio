@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTrail, animated } from "react-spring";
 import { FaDownload } from "react-icons/fa";
 
@@ -10,6 +10,7 @@ const Banner = () => {
     "FrontEnd Developer",
   ];
   const [currentSubtitle, setCurrentSubtitle] = useState(0);
+  const [loading, setLoading] = useState(true); // Loading state for skeleton
 
   // Trail animation for characters
   const trail = useTrail(subtitles[currentSubtitle].length, {
@@ -26,6 +27,36 @@ const Banner = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [subtitles.length]);
+
+  // Simulate loading state for data fetching (you can replace it with real fetching logic)
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000); // 2 seconds loading simulation
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-6">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between pt-24">
+          {/* Left Section */}
+          <div className="lg:w-1/2 text-center lg:text-left">
+            {/* Banner Title Skeleton */}
+            <div className="h-12 w-1/2 bg-gray-700 rounded mb-6 animate-pulse"></div>
+            {/* Subtitle Skeleton */}
+            <div className="h-8 w-2/3 bg-gray-700 rounded mb-6 animate-pulse"></div>
+            {/* Description Skeleton */}
+            <div className="h-6 w-3/4 bg-gray-700 rounded mb-6 animate-pulse"></div>
+            {/* Download Button Skeleton */}
+            <div className="h-12 w-48 bg-gray-700 rounded-full animate-pulse mb-6"></div>
+          </div>
+
+          {/* Right Section Skeleton */}
+          <div className="lg:w-1/3 mt-10 lg:mt-0">
+            <div className="w-60 h-60 bg-gray-700 rounded-full animate-pulse mx-auto lg:mx-0"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-6">

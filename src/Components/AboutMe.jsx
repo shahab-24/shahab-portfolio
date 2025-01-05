@@ -1,8 +1,48 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const AboutMe = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading delay (you can replace this with actual data fetching logic)
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-8">
+        <div className="container mx-auto">
+          {/* Section Header Skeleton */}
+          <div className="h-12 bg-gray-700 rounded mb-6 animate-pulse"></div>
+          <div className="h-8 bg-gray-700 rounded mb-12 animate-pulse"></div>
+
+          {/* About Me Content Skeleton */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Image Skeleton */}
+            <div className="w-60 lg:w-72 h-60 lg:h-72 bg-gray-700 rounded-full animate-pulse mb-4"></div>
+
+            {/* Text Skeleton */}
+            <div className="lg:w-2/3 text-center lg:text-left space-y-6">
+              <div className="h-6 bg-gray-700 rounded mb-4 animate-pulse"></div>
+              <div className="h-6 bg-gray-700 rounded mb-4 animate-pulse"></div>
+              <div className="h-6 bg-gray-700 rounded mb-4 animate-pulse"></div>
+              <div className="h-6 bg-gray-700 rounded mb-4 animate-pulse"></div>
+            </div>
+          </div>
+
+          {/* CTA Buttons Skeleton */}
+          <div className="flex justify-center lg:justify-start mt-12 space-x-4">
+            <div className="h-10 w-32 bg-gray-700 rounded-full animate-pulse"></div>
+            <div className="h-10 w-32 bg-gray-700 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-8">
       <div className="container mx-auto">
