@@ -1,0 +1,112 @@
+[
+    {
+      "id": "1",
+      "title": "Eco-Adventure Experiences 🌿",
+      "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
+      "description": "A web application showcasing eco-friendly travel adventures.",
+      "liveLink": "https://diving-story.web.app/",
+      "features": [
+        "Dynamic, visually appealing adventure gallery",
+        "Authentication with Firebase",
+        "Private routes for secure access",
+        "Responsive design optimized for all devices",
+        "Infinite scroll gallery with animations"
+      ],
+      "technologies": [
+        "React",
+        "React Router DOM",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Firebase"
+      ],
+      "npmPackages": [
+        "animate.css",
+        "aos",
+        "firebase",
+        "localforage",
+        "react",
+        "react-animate-on-scroll",
+        "react-icons",
+        "react-router-dom",
+        "sweetalert2",
+        "swiper",
+        "yet-another-react-lightbox"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Arabian World Movies",
+      "image": "https://images.unsplash.com/photo-1527181152855-fc03fc7949c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
+      "description": "A dynamic movie portal to explore, rate, and review movies.",
+      "liveLink": "https://explore-world-movies.web.app/",
+      "features": [
+        "Interactive movie portal with detailed information including ratings, genres, and release years",
+        "User authentication using Firebase",
+        "Featured movies section with carousel effects and notifications using SweetAlert2",
+        "Responsive design using Tailwind CSS and DaisyUI",
+        "Smooth animations with AOS and Animate.css",
+        "Star rating system using React Rating Star",
+        "Search functionality to search by title and filter by rating and release year"
+      ],
+      "technologies": [
+        "React.js",
+        "Tailwind CSS",
+        "DaisyUI",
+        "AOS",
+        "Animate.css",
+        "React Hook Form",
+        "React Rating Star",
+        "SweetAlert2"
+      ],
+      "backendTechnologies": [
+        "Express.js",
+        "CORS",
+        "dotenv"
+      ],
+      "authenticationAndDatabase": [
+        "Firebase for user authentication and hosting",
+        "MongoDB for storing movie data"
+      ],
+      "deployment": {
+        "frontend": "Firebase Hosting",
+        "backend": "Vercel"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Community Food Sharing 🍽️",
+      "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
+      "description": "A platform to share surplus food, reduce waste, and foster community engagement.",
+      "liveLink": "https://al-madina-foods.web.app/",
+      "features": [
+        "Food CRUD operations: Add, edit, delete, and view food listings",
+        "Dynamic food requests and availability status updates",
+        "Responsive design for mobile, tablet, and desktop",
+        "Secure authentication with Firebase and social login options",
+        "Sorting and searching by expiry date and food name",
+        "Gamification: Badges, leaderboard, and progress tracking for donations"
+      ],
+      "technologies": [
+        "React",
+        "React Router DOM",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Framer Motion"
+      ],
+      "backendTechnologies": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication"
+      ],
+      "additionalLibraries": [
+        "Axios",
+        "SweetAlert2"
+      ],
+      "deployment": {
+        "frontend": "Firebase Hosting",
+        "backend": "Vercel"
+      }
+    }
+  ]
+  
