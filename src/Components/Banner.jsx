@@ -85,7 +85,7 @@ const Banner = () => {
           <h1 className="text-4xl lg:text-6xl font-heading leading-tight mb-6">
             Hello, I'm <br />
             <span
-              className="text-purple-600 font-extrabold"
+              className="text-fuchsia-700 font-extrabold"
               style={{
                 display: "inline-block",
                 width: "12ch", // Adjust based on the longest string
