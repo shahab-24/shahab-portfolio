@@ -7,7 +7,11 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "text-yellow-300 font-bold" : "")}
+          className={({ isActive }) =>
+            isActive
+              ? "text-teal-500 font-semibold underline"
+              : "text-gray-300 hover:text-teal-400 transition duration-300"
+          }
         >
           Home
         </NavLink>
@@ -15,7 +19,11 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/about"
-          className={({ isActive }) => (isActive ? "text-yellow-300 font-bold" : "")}
+          className={({ isActive }) =>
+            isActive
+              ? "text-teal-500 font-semibold underline"
+              : "text-gray-300 hover:text-teal-400 transition duration-300"
+          }
         >
           About
         </NavLink>
@@ -23,7 +31,11 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/services"
-          className={({ isActive }) => (isActive ? "text-yellow-300 font-bold" : "")}
+          className={({ isActive }) =>
+            isActive
+              ? "text-teal-500 font-semibold underline"
+              : "text-gray-300 hover:text-teal-400 transition duration-300"
+          }
         >
           Services
         </NavLink>
@@ -31,7 +43,11 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/screenshots"
-          className={({ isActive }) => (isActive ? "text-yellow-300 font-bold" : "")}
+          className={({ isActive }) =>
+            isActive
+              ? "text-teal-500 font-semibold underline"
+              : "text-gray-300 hover:text-teal-400 transition duration-300"
+          }
         >
           Screenshots
         </NavLink>
@@ -40,7 +56,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-gradient-to-r from-gray-900 via-blue-900 to-purple-800 text-white shadow-lg sticky top-0 z-50">
+    <div className="navbar bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg sticky top-0 z-50">
       {/* Navbar Start */}
       <div className="navbar-start flex items-center justify-between w-full">
         <div className="dropdown lg:hidden">
@@ -66,13 +82,17 @@ const Navbar = () => {
           </button>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
+            className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
           >
             {links}
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl font-semibold">
-          <img className="w-[100%] h-[100%] lg:w-30 lg:h-30" src="https://i.ibb.co.com/JKdC8p6/DALL-E-2025-01-05-16-32-44-A-modern-and-minimalist-logo-for-a-web-developer-named-Shahab-Udding-The.webp" alt="Logo" />
+          <img
+            className="w-[100%] h-[100%] lg:w-30 lg:h-30"
+            src="https://i.ibb.co.com/JKdC8p6/DALL-E-2025-01-05-16-32-44-A-modern-and-minimalist-logo-for-a-web-developer-named-Shahab-Udding-The.webp"
+            alt="Logo"
+          />
         </a>
       </div>
 
@@ -84,9 +104,9 @@ const Navbar = () => {
       {/* Navbar End */}
       <div className="navbar-end flex items-center space-x-4">
         <a
-          href="https://drive.google.com/file/d/1p9ux35Ihvf2XXY7XTPXdvxLVKWZRz5bm/view?usp=sharing"
+          href="https://drive.google.com/file/d/1YJW1VlKhnPl3uHlFbc4vJCLQ8PIYjeZd/view?usp=sharing"
           download="Shahab_Uddin_Resume.pdf"
-          className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-1 hover:scale-105 transition-transform"
+          className="btn bg-gradient-to-r from-teal-500 to-blue-600 text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2 hover:scale-105 hover:shadow-md transition-transform"
         >
           <FaDownload className="text-white" />
           Download Resume
