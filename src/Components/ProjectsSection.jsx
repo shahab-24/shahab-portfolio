@@ -7,18 +7,10 @@ const ProjectsSection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/projects.json') // Fetch project data
+    fetch("/projects.json") // Fetch project data
       .then((res) => res.json())
       .then((data) => {
-        setProjects([...data,
-          {
-            id: "hostelhub",
-            title: "HostelHub - Hostel Management System",
-            description: "A MERN stack-based hostel meal management system that helps students and admins efficiently manage daily meals. It features user authentication, meal reviews, upcoming meal previews, dynamic meal requests, Stripe payment integration, and an admin dashboard.",
-            image: "https://hostelhub-f7524.web.app/banner.jpg", // Replace with actual banner image URL
-            liveLink: "https://hostelhub-f7524.web.app/",
-          }
-        ]);
+        setProjects(data);
         setLoading(false);
       });
   }, []);
@@ -29,7 +21,10 @@ const ProjectsSection = () => {
         {/* Skeleton Loader */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 lg:px-20">
           {[...Array(6)].map((_, index) => (
-            <div key={index} className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg animate-pulse">
+            <div
+              key={index}
+              className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg animate-pulse"
+            >
               <div className="h-48 bg-gray-600"></div>
               <div className="p-6">
                 <div className="h-6 bg-gray-700 rounded mb-4"></div>
@@ -56,7 +51,9 @@ const ProjectsSection = () => {
         id="project"
         className="py-16 bg-gradient-to-r from-purple-800 via-blue-900 to-gray-900 text-white"
       >
-        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">My Projects</h2>
+        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">
+          My Projects
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 lg:px-20">
           {projects.map((project, index) => (
             <motion.div

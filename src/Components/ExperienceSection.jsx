@@ -1,5 +1,4 @@
 import React from "react";
-// Fixed import statement
 import { motion } from "framer-motion";
 
 const experiences = [
@@ -36,28 +35,36 @@ const ExperienceSection = () => {
       className="relative py-16 bg-gradient-to-r from-gray-900 via-purple-800 to-blue-900 text-white"
     >
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 text-teal-300">
           Professional Experience
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white text-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="bg-white text-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <h3 className="text-2xl font-semibold">{exp.title}</h3>
-              <p className="mt-2 text-lg">
+              <p className="mt-2 text-lg text-teal-500">
                 {exp.place} | <strong>{exp.duration}</strong>
               </p>
               <p className="mt-4 text-sm">{exp.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute inset-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: "url('https://via.placeholder.com/1200x800')" }}></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900"></div>
+      <div
+        className="absolute inset-0 opacity-20 bg-cover bg-center z-0"
+        style={{
+          backgroundImage: "url('https://via.placeholder.com/1200x800')",
+        }}
+      ></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 z-10"></div>
     </motion.div>
   );
 };

@@ -4,8 +4,8 @@
       "title": "Eco-Adventure Experiences 🌿",
       "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
       "description": "A web application showcasing eco-friendly travel adventures.",
-      "liveLink": "https://diving-story.web.app/",
-      "githubLink": "https://github.com/programming-hero-web-course1/b10-a9-authentication-shahab-24",
+      "liveLink": "https://diving-story.web.app",
+      "githubLink": "https://github.com/shahab-24/Diving-Story",
       "features": [
         "Dynamic, visually appealing adventure gallery",
         "Authentication with Firebase",
@@ -44,7 +44,7 @@
       "image": "https://images.unsplash.com/photo-1527181152855-fc03fc7949c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
       "description": "A dynamic movie portal to explore, rate, and review movies.",
       "liveLink": "https://explore-world-movies.web.app/",
-      "githubLink": "https://github.com/programming-hero-web-course2/b10-a10-client-side-shahab-24",
+      "githubLink": "https://github.com/shahab-24/Explore-World-s-Movies",
       "features": [
         "Interactive movie portal with detailed information including ratings, genres, and release years",
         "User authentication using Firebase",
@@ -87,8 +87,8 @@
       "title": "Community Food Sharing 🍽️",
       "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400", 
       "description": "A platform to share surplus food, reduce waste, and foster community engagement.",
-      "liveLink": "https://al-madina-foods.web.app/",
-      "githubLink": "https://github.com/programming-hero-web-course2/b10a11-client-side-shahab-24",
+      "liveLink": "https://al-madina-foods.web.app",
+      "githubLink": "https://github.com/shahab-24/AL-MADINA-FOODS",
       "features": [
         "Food CRUD operations: Add, edit, delete, and view food listings",
         "Dynamic food requests and availability status updates",
@@ -122,6 +122,54 @@
       "improvements": "UI needs enhancements to make navigation more intuitive. Add a map-based food location finder to improve user experience.",
       "lackings": "The gamification system is basic and lacks advanced analytics or tracking mechanisms.",
       "learningOutcomes": "Strengthened knowledge of CRUD operations and Firebase Authentication. Learned how to implement gamification mechanics for user engagement."
-    }
+    },
+
+    {
+        "id": "4",
+        "title": "HostelHub - Hostel Management System",
+        "image": "https://i.ibb.co.com/pB6YrZYs/hostel-3.jpg",
+        "description": "A MERN stack-based hostel meal management system that helps students and admins efficiently manage daily meals.",
+        "liveLink": "https://hostelhub.web.app",
+        "githubLink": "https://github.com/shahab-24/HostelHub-client",
+        "features": [
+          "User Authentication – Secure login, registration, and social authentication (Firebase)",
+          "Admin Dashboard – Manage users, meals, reviews, and subscriptions",
+          "Student Meal Reviews – Students can review and like meals",
+          "Dynamic Meal Management – Filter, sort, and request meals",
+          "Upcoming Meals – Preview and like upcoming meal plans",
+          "Payment Integration – Secure payments using Stripe",
+          "Persistent Login – Users remain logged in even after page refresh",
+          "Mobile Responsive UI – Optimized for desktop, tablet, and mobile",
+          "Real-time Notifications – Sweet alerts & toast notifications for user interactions",
+          "Advanced Data Fetching – Implemented with TanStack Query for efficient API calls"
+        ],
+        "technologies": [
+          "React.js",
+          "Tailwind CSS",
+          "DaisyUI",
+          "TanStack Query"
+        ],
+        "backendTechnologies": [
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "JWT"
+        ],
+        "authenticationAndDatabase": [
+          "Firebase for user authentication",
+          "JWT for secure token-based authentication",
+          "MongoDB for storing meal and user data"
+        ],
+        "paymentIntegration": "Stripe for secure online payments",
+        "deployment": {
+          "frontend": "Netlify",
+          "backend": "Vercel"
+        },
+        "challenges": "Implementing dynamic meal management while ensuring smooth user experience and integrating secure payment functionality.",
+        "improvements": "Enhance UI with better meal previews and improve notification system for real-time updates.",
+        "lackings": "Currently lacks an AI-based meal recommendation system based on user preferences.",
+        "learningOutcomes": "Gained experience in implementing a full-stack MERN project with user authentication, payment integration, and optimized data fetching."
+      }
+      
   ]
   

@@ -1,3 +1,10 @@
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { FaHtml5, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiDaisyui, SiExpress, SiMongodb, SiJsonwebtokens, SiAxios, SiSwiper } from "react-icons/si";
+import { TbBrandJavascript } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
 import { FaDownload } from "react-icons/fa";
 
@@ -9,8 +16,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-teal-500 font-semibold underline"
-              : "text-gray-300 hover:text-teal-400 transition duration-300"
+              ? "text-teal-400 font-bold underline border-b-2 border-teal-400"
+              : "text-gray-300 hover:text-teal-300 transition duration-300"
           }
         >
           Home
@@ -21,8 +28,8 @@ const Navbar = () => {
           to="/about"
           className={({ isActive }) =>
             isActive
-              ? "text-teal-500 font-semibold underline"
-              : "text-gray-300 hover:text-teal-400 transition duration-300"
+              ? "text-teal-400 font-bold underline border-b-2 border-teal-400"
+              : "text-gray-300 hover:text-teal-300 transition duration-300"
           }
         >
           About
@@ -33,8 +40,8 @@ const Navbar = () => {
           to="/services"
           className={({ isActive }) =>
             isActive
-              ? "text-teal-500 font-semibold underline"
-              : "text-gray-300 hover:text-teal-400 transition duration-300"
+              ? "text-teal-400 font-bold underline border-b-2 border-teal-400"
+              : "text-gray-300 hover:text-teal-300 transition duration-300"
           }
         >
           Services
@@ -45,8 +52,8 @@ const Navbar = () => {
           to="/screenshots"
           className={({ isActive }) =>
             isActive
-              ? "text-teal-500 font-semibold underline"
-              : "text-gray-300 hover:text-teal-400 transition duration-300"
+              ? "text-teal-400 font-bold underline border-b-2 border-teal-400"
+              : "text-gray-300 hover:text-teal-300 transition duration-300"
           }
         >
           Screenshots
@@ -56,8 +63,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg sticky top-0 z-50">
-      {/* Navbar Start */}
+    <div className="navbar bg-gray-900 text-white shadow-lg sticky top-0 z-50">
       <div className="navbar-start flex items-center justify-between w-full">
         <div className="dropdown lg:hidden">
           <button
@@ -96,12 +102,10 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Navbar Center */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-4 space-x-4">{links}</ul>
       </div>
 
-      {/* Navbar End */}
       <div className="navbar-end flex items-center space-x-4">
         <a
           href="https://drive.google.com/file/d/1YJW1VlKhnPl3uHlFbc4vJCLQ8PIYjeZd/view?usp=sharing"

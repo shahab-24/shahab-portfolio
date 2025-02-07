@@ -9,6 +9,7 @@ import ProjectsSection from "./Components/ProjectsSection";
 import AboutMe from "./Components/AboutMe";
 import ProjectDetails from "./Components/ProjectDetails";
 import ServicesCard from "./Components/ServicesCard";
+import ScreenShotSection from "./Components/ScreenShotSection";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:'services',
         element: <ServicesCard></ServicesCard>
+      },
+      {
+        path:'screenshots',
+        element: <ScreenShotSection></ScreenShotSection>
       }
     ],
   },

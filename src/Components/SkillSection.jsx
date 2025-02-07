@@ -1,61 +1,54 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FaHtml5, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss, SiDaisyui, SiExpress, SiMongodb, SiJsonwebtokens, SiAxios, SiSwiper } from "react-icons/si";
 import { TbBrandJavascript } from "react-icons/tb";
 
 const skills = [
-  { name: "HTML", icon: <FaHtml5 />, color: "red" },
-  { name: "JavaScript", icon: <TbBrandJavascript />, color: "yellow" },
-  { name: "React.js", icon: <FaReact />, color: "blue" },
-  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "cyan" },
-  { name: "DaisyUI", icon: <SiDaisyui />, color: "purple" },
-  { name: "Node.js", icon: <FaNodeJs />, color: "green" },
-  { name: "Express.js", icon: <SiExpress />, color: "gray" },
-  { name: "MongoDB", icon: <SiMongodb />, color: "darkgreen" },
-  { name: "JWT", icon: <SiJsonwebtokens />, color: "orange" },
-  { name: "Axios", icon: <SiAxios />, color: "teal" },
-  { name: "Swiper.js", icon: <SiSwiper />, color: "skyblue" },
+  { name: "HTML", icon: <FaHtml5 />, color: "#E34F26" },
+  { name: "JavaScript", icon: <TbBrandJavascript />, color: "#F7DF1E" },
+  { name: "React.js", icon: <FaReact />, color: "#61DBFB" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
+  { name: "DaisyUI", icon: <SiDaisyui />, color: "#4E4DFF" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#8CC84B" },
+  { name: "Express.js", icon: <SiExpress />, color: "#333" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
+  { name: "JWT", icon: <SiJsonwebtokens />, color: "#000000" },
+  { name: "Axios", icon: <SiAxios />, color: "#5A29A0" },
+  { name: "Swiper.js", icon: <SiSwiper />, color: "#E9E9E9" },
 ];
 
-const SkillPlanet = ({ index, color }) => {
-  const meshRef = useRef();
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-    const angle = (index / skills.length) * Math.PI * 2 + t * 0.5;
-    const radius = 3;
-    meshRef.current.position.x = radius * Math.cos(angle);
-    meshRef.current.position.y = radius * Math.sin(angle);
-  });
+// Duplicate skills array for infinite scrolling effect
+const repeatedSkills = [...skills, ...skills];
 
+const SkillScroll = () => {
   return (
-    <mesh ref={meshRef}>
-      <sphereGeometry args={[0.5, 32, 32]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
+    <div className="relative w-full overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-10">
+      {/* Infinite Scrolling Wrapper */}
+      <motion.div
+        className="flex w-max"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{
+          ease: "linear",
+          duration: 15, // Adjust speed (lower is faster)
+          repeat: Infinity,
+        }}
+      >
+        {repeatedSkills.map((skill, index) => (
+          <motion.div
+            key={index}
+            className="flex flex-col items-center justify-center w-40 h-40 bg-gray-800 shadow-xl rounded-lg mx-4 p-4 text-white cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-5xl" style={{ color: skill.color }}>
+              {skill.icon}
+            </div>
+            <p className="mt-2 text-lg font-semibold">{skill.name}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 
-const GalaxySkills = () => {
-  return (
-    <Canvas camera={{ position: [0, 0, 6] }}>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[0, 0, 0]} intensity={1.5} />
-      <OrbitControls enableZoom={false} />
-
-      {/* Sun at the center */}
-      <mesh position={[0, 0, 0]}>
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color="gold" emissive="yellow" emissiveIntensity={0.7} />
-      </mesh>
-
-      {/* Animated Planets (Skills) */}
-      {skills.map((skill, index) => (
-        <SkillPlanet key={index} index={index} color={skill.color} />
-      ))}
-    </Canvas>
-  );
-};
-
-export default GalaxySkills;
+export default SkillScroll;

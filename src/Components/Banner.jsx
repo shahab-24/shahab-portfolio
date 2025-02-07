@@ -14,7 +14,7 @@ import {
 import { Typewriter } from "react-simple-typewriter";
 import { useTrail, animated } from "@react-spring/web";
 import { Link } from "react-router-dom";
-import img from '../assets/profile3.jpg';
+import img from "../assets/profile3.jpg";
 
 const Banner = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -75,25 +75,27 @@ const Banner = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             <a
-              href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/shahab-uddin24/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
             >
               Hire Me
             </a>
             <Link to="/project">
-              <button
-                className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
-              >
+              <button className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform">
                 View Projects
               </button>
             </Link>
           </motion.div>
         </div>
-        <div className="lg:w-1/3 mt-10 lg:mt-0 relative">
+
+        {/* Updated Profile Image Section */}
+        <div className="lg:w-1/3 mt-10 lg:mt-0 flex justify-center">
           <img
             src={img || "https://i.ibb.co.com/fG647Hh/DALL-E-2025-01-04-21-02-53-A-visually-appealing-and-professional-banner-design-for-a-junior-web-deve.webp"}
-            alt="Web Developer Illustration"
-            className="rounded-full shadow-2xl mx-auto lg:mx-0 w-60 h-60 lg:w-72 lg:h-72 object-cover z-20 relative"
+            alt="Web Developer"
+            className="w-44 h-44 lg:w-56 lg:h-56 rounded-lg border-4 border-purple-400 shadow-lg object-cover"
           />
         </div>
       </div>
@@ -107,14 +109,51 @@ const Banner = () => {
           {isDrawerOpen ? <FaArrowLeft size={20} /> : <FaArrowRight size={20} />}
         </button>
         <div
-          className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-purple-700 p-4 rounded-l-lg shadow-lg transition-all duration-300 ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}
+          className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-purple-700 p-4 rounded-l-lg shadow-lg transition-all duration-300 ${
+            isDrawerOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
           <div className="flex flex-col space-y-4">
-            <a href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaLinkedin /></a>
-            <a href="https://github.com/shahab-24" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaGithub /></a>
-            <a href="https://x.com/SHAHAB_UDDIN_24" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaTwitter /></a>
-            <a href="https://www.facebook.com/shawonctg22/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaFacebook /></a>
-            <a href="https://wa.me/8801786609585?text=Hello%20Shahab!%20I%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaWhatsapp /></a>
+            <a
+              href="https://www.linkedin.com/in/shahab-uddin24/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-white hover:scale-125 transition"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/shahab-24"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-white hover:scale-125 transition"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://x.com/SHAHAB_UDDIN_24"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-white hover:scale-125 transition"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://www.facebook.com/shawonctg22/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-white hover:scale-125 transition"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://wa.me/8801786609585?text=Hello%20Shahab!%20I%20would%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-white hover:scale-125 transition"
+            >
+              <FaWhatsapp />
+            </a>
           </div>
         </div>
       </div>
