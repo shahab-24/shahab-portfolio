@@ -12,7 +12,7 @@ import SkillSection from "./SkillSection";
 
 const Home = () => {
     return (
-        <div>
+        <div className="min-h-[calc(100vh-67px)]">
         <Banner></Banner>
         <AboutMe></AboutMe>
         <ExperienceSection></ExperienceSection>

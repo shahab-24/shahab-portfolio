@@ -42,7 +42,7 @@ const ScreenShotSection = () => {
           {/* Project 3 */}
           <div className="relative">
             <img
-              src={img3}
+              src={img4}
               alt="Project 3 Screenshot"
               className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition transform duration-300"
             />
@@ -54,7 +54,7 @@ const ScreenShotSection = () => {
           {/* Project 4 */}
           <div className="relative">
             <img
-              src={img4}
+              src={img3}
               alt="Project 4 Screenshot"
               className="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition transform duration-300"
             />

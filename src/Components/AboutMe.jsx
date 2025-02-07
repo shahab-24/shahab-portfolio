@@ -9,7 +9,7 @@ const AboutMe = () => {
 
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10">
         {/* Profile Image with Glassmorphism */}
-        <motion.div 
+        <motion.div
           className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-fuchsia-400 shadow-lg bg-opacity-20 backdrop-blur-lg"
           whileHover={{ scale: 1.05 }}
         >
@@ -32,21 +32,43 @@ const AboutMe = () => {
           </motion.h1>
 
           <p className="text-lg lg:text-xl leading-relaxed text-gray-300">
-            Hello! I’m <span className="text-yellow-400 font-medium">Shahab Uddin</span>, a **MERN Stack Developer** passionate about **web development** and **cybersecurity**. I bring problem-solving skills from my experience as a teacher, now applying them in the tech world.
+            Hello! I’m <span className="text-yellow-400 font-medium">Shahab Uddin</span>, a **MERN Stack Developer** with a passion for building robust and scalable web applications. My journey into programming started from a deep interest in problem-solving and helping others, which has now evolved into a career in web development and cybersecurity.
           </p>
+
           <p className="text-lg leading-relaxed text-gray-300">
-            I specialize in **React, JavaScript, Tailwind CSS, Firebase, and MongoDB**. I love building **user-friendly interfaces** and **secure web applications**.
+            I specialize in **React, JavaScript, Tailwind CSS, Firebase, and MongoDB**, and love creating **user-friendly, interactive interfaces**. Whether it's developing secure web applications or improving user experience, I strive to produce clean, maintainable code.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-300">
+            In my free time, I enjoy **reading books on technology and security**, learning new programming languages, and exploring **cybersecurity techniques**. I'm also an avid traveler, always seeking adventure in the natural world. Whether it's hiking, exploring new cultures, or helping others in need, I try to balance my work life with meaningful personal experiences.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-300">
+            The type of work I enjoy most revolves around **solving complex problems**, learning continuously, and collaborating with like-minded individuals who are passionate about technology. Whether working solo on a project or part of a team, I thrive on challenges that allow me to grow professionally and personally.
           </p>
 
           {/* Social Links */}
           <div className="flex space-x-6 justify-center lg:justify-start mt-4">
-            <a href="https://github.com/shahab-24" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-yellow-300 transition-transform transform hover:scale-110">
+            <a
+              href="https://github.com/shahab-24"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-yellow-300 transition-transform transform hover:scale-110"
+            >
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-blue-300 transition-transform transform hover:scale-110">
+            <a
+              href="https://www.linkedin.com/in/shahab-uddin24/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-blue-300 transition-transform transform hover:scale-110"
+            >
               <FaLinkedin />
             </a>
-            <a href="mailto:your-email@example.com" className="text-3xl hover:text-green-300 transition-transform transform hover:scale-110">
+            <a
+              href="mailto:your-email@example.com"
+              className="text-3xl hover:text-green-300 transition-transform transform hover:scale-110"
+            >
               <FaEnvelope />
             </a>
           </div>
@@ -58,12 +80,16 @@ const AboutMe = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <a href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer"
+            <a
+              href="https://www.linkedin.com/in/shahab-uddin24/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform px-6 py-3 rounded-lg"
             >
               Hire Me
             </a>
-            <a href="/projects"
+            <a
+              href="/projects"
               className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform px-6 py-3 rounded-lg"
             >
               View Projects
