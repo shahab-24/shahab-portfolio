@@ -1,7 +1,7 @@
-
-
-import  { useEffect, useState } from "react";
-import { useTrail, animated } from "react-spring";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars } from "@react-three/drei";
 import {
   FaLinkedin,
   FaGithub,
@@ -11,178 +11,112 @@ import {
   FaArrowLeft,
   FaArrowRight,
 } from "react-icons/fa";
-// import { Link } from "react-router-dom";
-// import { ScrollLink } from "react-scroll";
 import { Typewriter } from "react-simple-typewriter";
+import { useTrail, animated } from "@react-spring/web";
+import { Link } from "react-router-dom";
+import img from '../assets/profile3.jpg';
 
 const Banner = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [currentSubtitle, setCurrentSubtitle] = useState(0);
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
   const subtitles = [
-        "Junior Web Developer",
-        "React Developer",
-        "MERN-Stack Developer",
-        "FrontEnd Developer",
-      ];
-      const [currentSubtitle, setCurrentSubtitle] = useState(0);
-      const [loading, setLoading] = useState(true); // Loading state for skeleton
-    
-      // Trail animation for characters
-      const trail = useTrail(subtitles[currentSubtitle].length, {
-        from: { opacity: 0, transform: "translateY(-50px)" },
-        to: { opacity: 1, transform: "translateY(0)" },
-        reset: true,
-        config: { tension: 180, friction: 12 },
-      });
-    
-      // Change subtitle every 3 seconds
-      useEffect(() => {
-        const interval = setInterval(() => {
-          setCurrentSubtitle((prev) => (prev + 1) % subtitles.length);
-        }, 3000);
-        return () => clearInterval(interval);
-      }, [subtitles.length]);
-    
-      // Simulate loading state for data fetching (you can replace it with real fetching logic)
-      useEffect(() => {
-        setTimeout(() => setLoading(false), 2000); // 2 seconds loading simulation
-      }, []);
-    
-      if (loading) {
-        return (
-          <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-6">
-            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between pt-24">
-              {/* Left Section */}
-              <div className="lg:w-1/2 text-center lg:text-left">
-                {/* Banner Title Skeleton */}
-                <div className="h-12 w-1/2 bg-gray-700 rounded mb-6 animate-pulse"></div>
-                {/* Subtitle Skeleton */}
-                <div className="h-8 w-2/3 bg-gray-700 rounded mb-6 animate-pulse"></div>
-                {/* Description Skeleton */}
-                <div className="h-6 w-3/4 bg-gray-700 rounded mb-6 animate-pulse"></div>
-                {/* Download Button Skeleton */}
-                <div className="h-12 w-48 bg-gray-700 rounded-full animate-pulse mb-6"></div>
-              </div>
-    
-              {/* Right Section Skeleton */}
-              <div className="lg:w-1/3 mt-10 lg:mt-0">
-                <div className="w-60 h-60 bg-gray-700 rounded-full animate-pulse mx-auto lg:mx-0"></div>
-              </div>
-            </div>
-          </div>
-        );
-      }
+    "Junior Web Developer",
+    "React Developer",
+    "MERN-Stack Developer",
+    "FrontEnd Developer",
+    "Full-Stack Developer",
+  ];
+
+  const trail = useTrail(subtitles[currentSubtitle].length, {
+    from: { opacity: 0, transform: "translateY(-10px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    reset: true,
+    config: { tension: 180, friction: 12 },
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSubtitle((prev) => (prev + 1) % subtitles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [subtitles.length]);
 
   return (
-    <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 px-6">
-      {/* Banner Content */}
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between pt-24">
-        {/* Left Section */}
+    <div className="relative overflow-hidden text-white py-16 px-6 bg-gradient-to-br from-gray-900 via-purple-900 to-black">
+      {/* Solar System Background */}
+      <Canvas className="absolute inset-0 z-0">
+        <Stars radius={100} depth={50} count={5000} factor={4} fade speed={1} />
+        <OrbitControls enableZoom={false} />
+      </Canvas>
+
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 pt-16 lg:pt-24">
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl lg:text-6xl font-heading leading-tight mb-6">
+          <h1 className="text-3xl lg:text-5xl font-bold leading-tight mb-6">
             Hello, I'm <br />
-            <span
-              className="text-fuchsia-700 font-extrabold"
-              style={{
-                display: "inline-block",
-                width: "12ch", // Adjust based on the longest string
-                whiteSpace: "nowrap", // Prevents wrapping
-              }}
-            >
-              <Typewriter
-                words={["SHAHAB UDDIN"]}
-                loop={0} // Infinite loop
-                typeSpeed={100} // Speed of typing
-                deleteSpeed={50} // Speed of deleting
-                delaySpeed={2000} // Delay before retyping
-              />
+            <span className="text-fuchsia-400 font-extrabold">
+              <Typewriter words={["SHAHAB UDDIN"]} loop={0} typeSpeed={100} deleteSpeed={50} delaySpeed={2000} />
             </span>
           </h1>
-          <div className="text-2xl lg:text-3xl font-semibold h-16 mb-6 relative">
-            {/* Animated Subtitle */}
-         {trail.map((props, index) => (
-              <animated.span
-                key={index}
-                style={props}
-                className="inline-block text-yellow-400"
-              >
+          <div className="text-xl lg:text-2xl font-semibold h-16 mb-6">
+            {trail.map((props, index) => (
+              <animated.span key={index} style={props} className="inline-block text-yellow-400">
                 {subtitles[currentSubtitle][index]}
               </animated.span>
             ))}
           </div>
           <p className="text-lg lg:text-xl font-light mb-6">
-            A passionate <span className="font-medium">Junior Web Developer</span> skilled in building modern web applications using technologies like React, Tailwind CSS, MongoDB, and more.
+            A passionate <span className="font-medium">Junior Web Developer</span> skilled in building modern web applications.
           </p>
-          <div className="flex justify-center lg:justify-start space-x-4 mb-6">
-            <a href="#" className="btn btn-primary btn-lg rounded-full shadow-lg">
+          <motion.div
+            className="flex justify-center lg:justify-start mt-12 space-x-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            <a
+              href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer"
+              className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
+            >
               Hire Me
             </a>
-        
-            <a href="project" className="btn btn-outline btn-lg rounded-full shadow-lg">
-  {/* <ScrollLink
-    to="project"
-    smooth={true}
-    duration={500}
-    offset={-70}
-  >
-    View Projects
-  </ScrollLink> */}
-  View Projects
-</a>
-          </div>
+            <Link to="/project">
+              <button
+                className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
+              >
+                View Projects
+              </button>
+            </Link>
+          </motion.div>
         </div>
-
-        {/* Right Section */}
-        <div className="lg:w-1/3 mt-10 lg:mt-0">
+        <div className="lg:w-1/3 mt-10 lg:mt-0 relative">
           <img
-            src="https://i.ibb.co.com/fG647Hh/DALL-E-2025-01-04-21-02-53-A-visually-appealing-and-professional-banner-design-for-a-junior-web-deve.webp"
+            src={img || "https://i.ibb.co.com/fG647Hh/DALL-E-2025-01-04-21-02-53-A-visually-appealing-and-professional-banner-design-for-a-junior-web-deve.webp"}
             alt="Web Developer Illustration"
-            className="rounded-full shadow-2xl mx-auto lg:mx-0"
+            className="rounded-full shadow-2xl mx-auto lg:mx-0 w-60 h-60 lg:w-72 lg:h-72 object-cover z-20 relative"
           />
         </div>
       </div>
 
-      {/* Drawer Section */}
-      <div>
-        {/* Drawer */}
-        <div
-          className={`fixed top-0 right-0 h-full w-24 bg-purple-600 shadow-lg rounded-l-lg transform transition-transform duration-300 ${
-            isDrawerOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+      {/* Social Media Icons */}
+      <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50">
+        <button
+          onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+          className="p-3 bg-purple-600 text-white rounded-l-full shadow-lg transition-transform hover:scale-110"
         >
-          {/* Social Icons */}
-          <div className="flex flex-col items-center justify-center space-y-4 h-screen">
-            <a href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-white bg-blue-600 hover:scale-150 transition-colors">
-              <FaLinkedin />
-            </a>
-            <a href="https://github.com/shahab-24" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-black hover:scale-150 transition-colors">
-              <FaGithub />
-            </a>
-            <a href="https://x.com/SHAHAB_UDDIN_24" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-blue-300 hover:scale-150 transition-colors">
-              <FaTwitter />
-            </a>
-            <a href="https://www.facebook.com/shawonctg22/" target="_blank" rel="noopener noreferrer" className="text-2xl bg-blue-600 rounded-full hover:scale-150 transition-colors">
-              <FaFacebook />
-            </a>
-            <a href="https://wa.me/8801786609585?text=Hello%20Shahab!%20I%20would%20like%20to%20connect%20with%20you.
-" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-green-600 hover:scale-150 transition-colors">
-              <FaWhatsapp />
-            </a>
+          {isDrawerOpen ? <FaArrowLeft size={20} /> : <FaArrowRight size={20} />}
+        </button>
+        <div
+          className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-purple-700 p-4 rounded-l-lg shadow-lg transition-all duration-300 ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <div className="flex flex-col space-y-4">
+            <a href="https://www.linkedin.com/in/shahab-uddin24/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaLinkedin /></a>
+            <a href="https://github.com/shahab-24" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaGithub /></a>
+            <a href="https://x.com/SHAHAB_UDDIN_24" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaTwitter /></a>
+            <a href="https://www.facebook.com/shawonctg22/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaFacebook /></a>
+            <a href="https://wa.me/8801786609585?text=Hello%20Shahab!%20I%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:scale-125 transition"><FaWhatsapp /></a>
           </div>
         </div>
-
-        {/* Toggle Button */}
-        <button
-          onClick={toggleDrawer}
-          className={`fixed top-1/2 transform -translate-y-1/2 z-40 p-2 text-white bg-purple-600 rounded-full shadow-lg transition-all duration-300 ${
-            isDrawerOpen ? "right-24" : "right-2"
-          }`}
-        >
-          {isDrawerOpen ? <FaArrowRight size={20} /> : <FaArrowLeft size={20} />}
-        </button>
       </div>
     </div>
   );

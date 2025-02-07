@@ -61,13 +61,13 @@ const ContactSection = () => {
               <FaEnvelope className="text-yellow-400 mr-4" />
               <p>shahabctg24@gmail.com</p>
             </div>
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <FaPhoneAlt className="text-yellow-400 mr-4" />
-              <p>01786609585</p>
-            </div>
+              <p>+8801786609585</p>
+            </div> */}
             <div className="flex items-center">
               <FaWhatsapp className="text-green-400 mr-4" />
-              <p>01786609585</p>
+              <p>+8801786609585</p>
             </div>
           </div>
         </div>

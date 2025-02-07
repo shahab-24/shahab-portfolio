@@ -10,7 +10,15 @@ const ProjectsSection = () => {
     fetch('/projects.json') // Fetch project data
       .then((res) => res.json())
       .then((data) => {
-        setProjects(data);
+        setProjects([...data,
+          {
+            id: "hostelhub",
+            title: "HostelHub - Hostel Management System",
+            description: "A MERN stack-based hostel meal management system that helps students and admins efficiently manage daily meals. It features user authentication, meal reviews, upcoming meal previews, dynamic meal requests, Stripe payment integration, and an admin dashboard.",
+            image: "https://hostelhub-f7524.web.app/banner.jpg", // Replace with actual banner image URL
+            liveLink: "https://hostelhub-f7524.web.app/",
+          }
+        ]);
         setLoading(false);
       });
   }, []);

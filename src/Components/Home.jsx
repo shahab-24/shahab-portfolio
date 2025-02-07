@@ -1,5 +1,6 @@
 import AboutMe from "./AboutMe";
 import Banner from "./Banner";
+
 import ContactSection from "./ContactSection";
 import EducationSection from "./EducationSection";
 import ExperienceSection from "./ExperienceSection";
