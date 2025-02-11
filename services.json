@@ -1,0 +1,101 @@
+[
+    {
+        "service": "Frontend Development",
+        "description": "Building modern, responsive, and user-friendly interfaces with clean, maintainable code.",
+        "technologies": ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "DaisyUI"],
+        "example_services": [
+            "Responsive website design",
+            "Interactive UI/UX development",
+            "Single Page Applications (SPAs)"
+        ],
+        "icon": "https://img.icons8.com/?size=80&id=1sMNUHUoy8pP&format=png" 
+    },
+    {
+        "service": "Backend Development",
+        "description": "Developing secure, efficient, and scalable server-side solutions.",
+        "technologies": ["Node.js", "Express.js", "MongoDB"],
+        "example_services": [
+            "API development and integration",
+            "Database design and management",
+            "Server-side scripting"
+        ],
+        "icon": "https://img.icons8.com/?size=64&id=WMvhDPZBJ9X2&format=png" 
+    },
+    {
+        "service": "Full-Stack Development",
+        "description": "Providing complete web solutions by integrating frontend and backend technologies.",
+        "technologies": ["MERN Stack (MongoDB, Express.js, React, Node.js)"],
+        "example_services": [
+            "Full-stack application development",
+            "End-to-end project handling",
+            "Real-time application features"
+        ],
+        "icon": "https://image.shutterstock.com/image-vector/modern-logo-colored-cubes-that-260nw-626819705.jpg"
+    },
+    {
+        "service": "Responsive Web Design",
+        "description": "Ensuring your website looks great on all devices, from mobile to desktop.",
+        "technologies": ["Tailwind CSS", "CSS Grid", "Flexbox"],
+        "example_services": [
+            "Mobile-first design",
+            "Cross-browser compatibility",
+            "Accessibility optimization"
+        ],
+        "icon": "https://img.icons8.com/?size=80&id=9xn9Hsa-alnl&format=png" 
+    },
+    {
+        "service": "Firebase Integration",
+        "description": "Implementing robust authentication and hosting solutions with Firebase.",
+        "technologies": ["Firebase Authentication", "Firebase Realtime Database", "Firestore"],
+        "example_services": [
+            "User authentication (email, social login)",
+            "Real-time database integration",
+            "Firebase hosting and deployment"
+        ],
+        "icon": "https://img.icons8.com/?size=48&id=62452&format=png" 
+    },
+    {
+        "service": "E-Commerce Development",
+        "description": "Developing secure and user-friendly online shopping experiences.",
+        "technologies": ["MERN Stack", "Payment Gateway APIs"],
+        "example_services": [
+            "Product catalogs and search functionality",
+            "Shopping cart and wishlist integration",
+            "Secure payment gateway integration"
+        ],
+        "icon": "https://img.icons8.com/?size=64&id=55378&format=png" 
+    },
+    {
+        "service": "Portfolio and Personal Website Development",
+        "description": "Creating professional portfolios and personal websites to showcase your brand.",
+        "technologies": ["React", "Tailwind CSS"],
+        "example_services": [
+            "Customized portfolio design",
+            "SEO-friendly pages",
+            "Blog integration"
+        ],
+        "icon": "https://img.icons8.com/?size=64&id=AfM2kzPzTz6Q&format=png"
+    },
+    {
+        "service": "RESTful API Development",
+        "description": "Designing and implementing APIs to connect your application seamlessly.",
+        "technologies": ["Node.js", "Express.js", "MongoDB"],
+        "example_services": [
+            "Secure API development",
+            "Third-party API integration",
+            "API documentation"
+        ],
+        "icon": "https://img.icons8.com/?size=64&id=55190&format=png"
+    },
+    {
+        "service": "Deployment and Hosting",
+        "description": "Deploying web applications on modern hosting platforms.",
+        "technologies": ["Firebase", "Vercel", "Netlify"],
+        "example_services": [
+            "Deploying static and dynamic websites",
+            "Domain setup and configuration",
+            "CI/CD setup for version control"
+        ],
+        "icon": "https://img.icons8.com/?size=64&id=WMvhDPZBJ9X2&format=png" 
+    }
+]
