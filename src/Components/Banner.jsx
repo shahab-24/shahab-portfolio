@@ -1,20 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaTwitter,
-  FaFacebook,
-  FaWhatsapp,
-  FaArrowLeft,
-  FaArrowRight,
-} from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { useTrail, animated } from "@react-spring/web";
 import { Link } from "react-router-dom";
 import img from "../assets/profile3.jpg";
+import { FaLinkedin, FaGithub, FaTwitter, FaFacebook, FaWhatsapp, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Banner = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -44,20 +34,20 @@ const Banner = () => {
 
   return (
     <div className="relative overflow-hidden text-white py-16 px-6 bg-gradient-to-br from-gray-900 via-purple-900 to-black">
-      {/* Solar System Background */}
-      <Canvas className="absolute inset-0 z-0">
-        <Stars radius={100} depth={50} count={5000} factor={4} fade speed={1} />
-        <OrbitControls enableZoom={false} />
-      </Canvas>
-
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 opacity-30 animate-pulse"></div> {/* New background animation */}
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 pt-16 lg:pt-24">
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-3xl lg:text-5xl font-bold leading-tight mb-6">
+          <motion.h1
+            className="text-3xl lg:text-5xl font-bold leading-tight mb-6"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             Hello, I'm <br />
             <span className="text-fuchsia-400 font-extrabold">
               <Typewriter words={["SHAHAB UDDIN"]} loop={0} typeSpeed={100} deleteSpeed={50} delaySpeed={2000} />
             </span>
-          </h1>
+          </motion.h1>
           <div className="text-xl lg:text-2xl font-semibold h-16 mb-6">
             {trail.map((props, index) => (
               <animated.span key={index} style={props} className="inline-block text-yellow-400">
@@ -66,7 +56,7 @@ const Banner = () => {
             ))}
           </div>
           <p className="text-lg lg:text-xl font-light mb-6">
-            A passionate <span className="font-medium">Junior Web Developer</span> skilled in building modern web applications.
+            a passionate <span className="font-medium">Junior Web Developer,</span> <span className="font-medium">MERN Stack Developer</span> specializing in React, JavaScript, and modern web technologies. I build scalable and interactive web applications.
           </p>
           <motion.div
             className="flex justify-center lg:justify-start mt-12 space-x-4"
@@ -90,14 +80,28 @@ const Banner = () => {
           </motion.div>
         </div>
 
-        {/* Updated Profile Image Section */}
-        <div className="lg:w-1/3 mt-10 lg:mt-0 flex justify-center">
-          <img
-            src={img || "https://i.ibb.co.com/fG647Hh/DALL-E-2025-01-04-21-02-53-A-visually-appealing-and-professional-banner-design-for-a-junior-web-deve.webp"}
-            alt="Web Developer"
-            className="w-44 h-44 lg:w-56 lg:h-56 rounded-lg border-4 border-purple-400 shadow-lg object-cover"
-          />
-        </div>
+        {/* Profile Image */}
+        <motion.div
+  className="lg:w-1/3 mt-10 lg:mt-0 flex justify-center relative"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1 }}
+//   style={{
+//     backgroundImage: 'url("https://i.ibb.co.com/TBTBp5V0/abstract.webp")', // Replace with your desired pattern URL
+//     backgroundRepeat: 'no-repeat',
+//     backgroundSize: 'cover',
+//     backgroundPosition: 'center',
+//     borderRadius: '50%',
+//     padding: '5px',
+//   }}
+>
+  <img
+    src={img || "https://i.ibb.co.com/n8b6PW6x/me-removebg-preview.png"}
+    alt="Web Developer"
+    className="w-44 h-44 lg:w-56 lg:h-56 rounded-lg border-4 border-purple-400 shadow-lg object-cover"
+  />
+</motion.div>
+
       </div>
 
       {/* Social Media Icons */}
@@ -109,9 +113,7 @@ const Banner = () => {
           {isDrawerOpen ? <FaArrowLeft size={20} /> : <FaArrowRight size={20} />}
         </button>
         <div
-          className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-purple-700 p-4 rounded-l-lg shadow-lg transition-all duration-300 ${
-            isDrawerOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-purple-700 p-4 rounded-l-lg shadow-lg transition-all duration-300 ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           <div className="flex flex-col space-y-4">
             <a

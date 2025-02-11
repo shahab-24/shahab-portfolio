@@ -56,7 +56,8 @@ const ProjectDetails = () => {
       <img
         src={project.image}
         alt={project.title}
-        className="w-full max-w-[90%] md:max-w-3xl rounded-lg shadow mb-6"
+        // className="w-full max-w-[90%] md:max-w-3xl rounded-lg shadow mb-6"
+        className="w-full max-w-[90%] md:max-w-3xl h-[350px] md:h-[350px] object-cover rounded-lg shadow-lg mb-4"
       />
 
       {/* Technologies Marquee */}
@@ -70,7 +71,9 @@ const ProjectDetails = () => {
           {project.technologies.map((tech, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full shadow-md text-sm font-semibold"
+              className="flex flex-col items-center justify-center w-40 h-30 bg-white/10 
+                      shadow-lg backdrop-blur-md rounded-lg mx-4 p-6 border border-fuchsia-500 
+                      text-white cursor-pointer hover:scale-110 hover:shadow-2xl transition-all duration-300"
             >
               {techIcons[tech] || "🔹"} {tech}
             </div>
@@ -90,7 +93,9 @@ const ProjectDetails = () => {
             {project.backendTechnologies.map((tech, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-md text-sm font-semibold"
+                className="flex flex-col items-center justify-center w-30 h-20 bg-white/10 
+                      shadow-lg backdrop-blur-md rounded-lg mx-4 p-4 border border-fuchsia-500 
+                      text-white cursor-pointer hover:scale-110 hover:shadow-2xl transition-all duration-300"
               >
                 {techIcons[tech] || "🔹"} {tech}
               </div>

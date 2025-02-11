@@ -110,7 +110,7 @@ const Navbar = () => {
         <a
           href="https://drive.google.com/file/d/1YJW1VlKhnPl3uHlFbc4vJCLQ8PIYjeZd/view?usp=sharing"
           download="Shahab_Uddin_Resume.pdf"
-          className="btn bg-gradient-to-r from-teal-500 to-blue-600 text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2 hover:scale-105 hover:shadow-md transition-transform"
+          className="btn bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
         >
           <FaDownload className="text-white" />
           Download Resume
