@@ -129,7 +129,7 @@
         "title": "HostelHub - Hostel Management System",
         "image": "https://i.ibb.co.com/pB6YrZYs/hostel-3.jpg",
         "description": "A MERN stack-based hostel meal management system that helps students and admins efficiently manage daily meals.",
-        "liveLink": "https://hostelhub.web.app",
+        "liveLink": "https://hostelhub-f7524.web.app",
         "githubLink": "https://github.com/shahab-24/HostelHub-client",
         "features": [
           "User Authentication – Secure login, registration, and social authentication (Firebase)",
