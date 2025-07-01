@@ -35,10 +35,10 @@ const AboutMe = () => {
         />
       </motion.div>
 
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10">
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between relative z-10">
         {/* Profile Image with Smooth Hover Effect */}
         <motion.div
-          className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-fuchsia-400 shadow-xl"
+          className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-fuchsia-400 shadow-xl mt-4"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 200, damping: 10 }}
         >
@@ -95,7 +95,7 @@ const AboutMe = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            🚀 <span className="text-fuchsia-400 font-semibold">Currently expanding my skills</span> in  
+             <span className="text-fuchsia-400 font-semibold">Currently expanding my skills</span> in  
             <span className="text-yellow-300 font-semibold"> Next.js</span>,  
             <span className="text-blue-300 font-semibold"> Redux</span>, and  
             <span className="text-green-300 font-semibold"> TypeScript </span>  
@@ -107,7 +107,7 @@ const AboutMe = () => {
             {skills.map((skill, index) => (
               <motion.span
                 key={index}
-                className={`px-4 py-2 rounded-lg bg-gray-800 ${skill.color} text-lg font-semibold shadow-md`}
+                className={`px-4 py-2 rounded-lg bg-gray-800 ${skill.color} text-lg font-medium md:font-semibold shadow-md border w-full md:w-auto border-fuchsia-500`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1, duration: 0.4 }}
@@ -142,7 +142,7 @@ const AboutMe = () => {
             </motion.a>
 
             <Link to="/project">
-              <motion.button className="w-40 h-12 flex justify-center items-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold rounded-lg shadow-lg transition-transform hover:scale-105">
+              <motion.button className="w-40 h-12 flex justify-center items-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold rounded-lg shadow-lg transition-transform hover:scale-105 ">
                 View Projects
               </motion.button>
             </Link>

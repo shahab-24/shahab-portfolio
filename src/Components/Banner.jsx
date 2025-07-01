@@ -5,6 +5,7 @@ import { useTrail, animated } from "@react-spring/web";
 import { Link } from "react-router-dom";
 import img from "../assets/profile-image.jpg";
 import { FaLinkedin, FaGithub, FaTwitter, FaFacebook, FaWhatsapp, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import img from "../assets/profile-image.jpg";
 
 const Banner = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -111,16 +112,24 @@ const Banner = () => {
         </div>
 
         {/* Profile Image */}
-        <motion.div
-          className="lg:w-1/3 mt-10 lg:mt-0 flex justify-center relative"
+        {/* <motion.div
+          className="lg:w-1/3 mt-10 lg:mt-0  flex justify-center relative"
           animate={{ y: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
         >
           <img
             src={img || "https://i.ibb.co/n8b6PW6x/me-removebg-preview.png"}
             alt="Web Developer"
-            className="w-44 h-44 lg:w-56 lg:h-56 rounded-full border-4 border-purple-400 shadow-lg object-cover"
+            className="w-full h-full lg:w-56 lg:h-56 rounded-full border-4 border-purple-400 shadow-lg object-cover"
           />
+        </motion.div> */}
+
+        <motion.div
+          className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-fuchsia-400 shadow-xl mt-4"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          <img src={img} alt="Shahab Uddin" className="w-full h-full object-cover" />
         </motion.div>
       </div>
 

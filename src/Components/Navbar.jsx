@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink to="/services" className={({ isActive }) => isActive ? "text-teal-400 font-bold border-b-2 border-teal-400" : "text-gray-300 hover:text-teal-300 transition duration-300"}>Services</NavLink>
       </li>
       <li>
-        <NavLink to="/screenshots" className={({ isActive }) => isActive ? "text-teal-400 font-bold border-b-2 border-teal-400" : "text-gray-300 hover:text-teal-300 transition duration-300"}>Screenshots</NavLink>
+        <NavLink to="/screenshots" className={({ isActive }) => isActive ? "text-teal-400 font-bold border-b-2 border-teal-400" : "text-gray-300 hover:text-teal-300 transition duration-300"}>Images</NavLink>
       </li>
     </>
   );
@@ -37,7 +37,7 @@ const Navbar = () => {
         <ul className="hidden lg:flex space-x-6 text-lg">{links}</ul>
 
         {/* Desktop Resume Button */}
-        <a href="https://drive.google.com/file/d/1YJW1VlKhnPl3uHlFbc4vJCLQ8PIYjeZd/view?usp=sharing" download className="hidden md:flex items-center gap-2 w-40 h-12 justify-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform">
+        <a href="https://drive.google.com/file/d/13XJEa-d6d-YUm26SdxOToRIyRsz9QiH5/view?usp=sharing" download className="hidden md:flex items-center gap-2 w-40 h-12 justify-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform">
           <FaDownload /> Resume
         </a>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
 
         {/* Mobile Resume Button */}
         <div className="mt-4 flex  justify-center">
-          <a href="https://drive.google.com/file/d/1YJW1VlKhnPl3uHlFbc4vJCLQ8PIYjeZd/view?usp=sharing" download className="w-40 h-12 flex justify-center items-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform gap-2">
+          <a href="https://drive.google.com/file/d/1jz18njAxCXc__25NOPMKMMGQasAl_7KH/view?usp=sharing" download className="w-40 h-12 flex justify-center items-center bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform gap-2">
             <FaDownload /> Resume
           </a>
         </div>

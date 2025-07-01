@@ -23,7 +23,7 @@ const ProjectsSection = () => {
           {[...Array(6)].map((_, index) => (
             <div
               key={index}
-              className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg animate-pulse"
+              className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg animate-pulse "
             >
               <div className="h-48 bg-gray-600"></div>
               <div className="p-6">
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105"
+              className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 border-2 border-fuchsia-500"
               whileHover={{ scale: 1.05 }}
             >
               <img

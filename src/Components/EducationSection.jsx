@@ -53,7 +53,7 @@ const EducationSection = () => {
                         ${
                           index === 1
                             ? "w-full md:w-96 lg:w-96 border-2 border-fuchsia-500" // Middle card larger
-                            : "w-full md:w-80 lg:w-72 border border-gray-600" // Side cards smaller
+                            : "w-full md:w-80 lg:w-72 border-2 border-fuchsia-500" // Side cards smaller
                         }`}
             style={{ marginTop: `${index === 1 ? -20 : 0}px` }}
           >

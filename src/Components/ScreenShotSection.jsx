@@ -12,13 +12,13 @@ const ScreenShotSection = () => {
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Title */}
         <h2 className="text-4xl font-extrabold text-center mb-12 tracking-wide uppercase">
-          Project Screenshots
+          Home Pages
         </h2>
 
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Screenshot Cards */}
-          {[img1, img2, img3, img4].map((image, index) => (
+          {[img3, img4, img1, img2, ].map((image, index) => (
             <div
               key={index}
               className="group relative overflow-hidden rounded-lg shadow-lg border border-white/20 bg-white bg-opacity-10 backdrop-blur-lg transform hover:scale-105 transition duration-300 ease-in-out"

@@ -22,11 +22,11 @@ const ContactSection = () => {
       <div className="container mx-auto flex flex-col lg:flex-row gap-12">
         
         {/* Contact Form */}
-        <div className="lg:w-1/2 bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="lg:w-1/2 bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-xl transition-all duration-300 hover:shadow-2xl border-2 border-fuchsia-500">
           <h2 className="text-4xl font-bold text-center lg:text-left mb-6 text-blue-300">
             Get in Touch
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 ">
             <div>
               <input
                 type="email"
@@ -60,7 +60,7 @@ const ContactSection = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="lg:w-1/2 bg-white/10 backdrop-blur-lg p-2 md:p-8 rounded-xl shadow-xl flex flex-col justify-center items-center lg:items-start transition-all duration-300 hover:shadow-2xl">
+        <div className="lg:w-1/2 bg-white/10 backdrop-blur-lg p-2 md:p-8 rounded-xl shadow-xl flex flex-col justify-center items-center lg:items-start transition-all duration-300 hover:shadow-2xl border-2 border-fuchsia-500">
           <h3 className="text-3xl font-semibold text-blue-300 mb-6">Contact Information</h3>
           <div className="space-y-6 text-lg w-full max-w-md mx-auto lg:mx-0">
             <div className="flex items-center hover:scale-105 transition-all duration-300">
